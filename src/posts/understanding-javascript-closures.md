@@ -1,7 +1,7 @@
 ---
-title: Understanding JavaScript Closures
-date: 2023-10-05
-description: A deep dive into JavaScript closures and how they work.
+title: "Understanding JavaScript Closures"
+date: "2023-10-05"
+description: "A deep dive into JavaScript closures and how they work."
 ---
 
 # Understanding JavaScript Closures

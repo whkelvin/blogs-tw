@@ -1,7 +1,7 @@
 ---
-title: Mastering CSS Grid: A Comprehensive Guide
-date: 2023-10-20
-description: Learn how to use CSS Grid to create complex layouts with ease.
+title: "Mastering CSS Grid: A Comprehensive Guide"
+date: "2023-10-20"
+description: "Learn how to use CSS Grid to create complex layouts with ease."
 ---
 
 # Mastering CSS Grid: A Comprehensive Guide

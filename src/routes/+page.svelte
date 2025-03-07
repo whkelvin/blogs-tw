@@ -5,62 +5,36 @@
   import PostCard from '$lib/components/PostCard.svelte';
   import { SITE_DESCRIPTION } from '$lib/constants';
   
-  let allPosts: Post[] = [];
-  let visiblePosts: Post[] = [];
-  let page = 1;
+  let allPosts: Post[] = $state([]);
+  let visiblePosts: Post[] = $state([]);
+  let page = $state(1);
   const postsPerPage = 5;
-  let loading = false;
-  let hasMore = true;
+  let loading = $state(true);
+  let hasMore = $state(true);
   
-  onMount(() => {
-    const loadPosts = async () => {
-      allPosts = await getAllPosts();
-      loadMorePosts();
-      
-      // Set up intersection observer for infinite scroll
-      const observer = new IntersectionObserver((entries) => {
-        const target = entries[0];
-        if (target.isIntersecting && hasMore && !loading) {
-          loadMorePosts();
-        }
-      }, {
-        rootMargin: '100px'
-      });
-      
-      const sentinel = document.getElementById('sentinel');
-      if (sentinel) {
-        observer.observe(sentinel);
-      }
-      
-      return () => {
-        if (sentinel) {
-          observer.unobserve(sentinel);
-        }
-      };
-    };
-    
-    loadPosts();
+  onMount(async () => {
+    allPosts = await getAllPosts();
+    loading = false;
+    // Initial load of first page
+    const initialPosts = allPosts.slice(0, postsPerPage);
+    visiblePosts = initialPosts;
+    hasMore = allPosts.length > postsPerPage;
+    console.log(hasMore);
   });
   
   function loadMorePosts() {
     if (loading || !hasMore) return;
     
-    loading = true;
-    
-    const start = (page - 1) * postsPerPage;
+    const start = visiblePosts.length;
     const end = start + postsPerPage;
     const newPosts = allPosts.slice(start, end);
     
     if (newPosts.length > 0) {
       visiblePosts = [...visiblePosts, ...newPosts];
-      page += 1;
-    }
-    
-    if (end >= allPosts.length) {
+      hasMore = visiblePosts.length < allPosts.length;
+    } else {
       hasMore = false;
     }
-    
-    loading = false;
   }
 </script>
 
@@ -73,22 +47,30 @@
   <h1 class="text-xl font-bold mb-8 px-6">Kelvin 的開發筆記</h1>
   
   <div class="space-y-6">
-    {#each visiblePosts as post (post.slug)}
-      <PostCard {post} />
-    {:else}
-      <p>No posts found. Check back soon!</p>
-    {/each}
-    
     {#if loading}
       <div class="py-4 text-center">
         <div class="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent" role="status">
           <span class="sr-only">Loading...</span>
         </div>
       </div>
-    {/if}
-    
-    {#if hasMore}
-      <div id="sentinel" class="h-4"></div>
+    {:else if visiblePosts.length > 0}
+      {#each visiblePosts as post (post.slug)}
+        <PostCard {post} />
+      {/each}
+      
+      {#if hasMore}
+        <div class="flex justify-center mt-8">
+          <button 
+            class="px-6 py-2 underline text-primary rounded-lg transition-colors"
+            onclick={loadMorePosts}
+          >
+            Show More Posts
+          </button>
+        </div>
+      {/if}
+
+    {:else}
+      <p class="text-center text-gray-600">No posts found. Check back soon!</p>
     {/if}
   </div>
 </section>

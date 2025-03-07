@@ -1,7 +1,7 @@
 ---
-title: Exploring SvelteKit: A Beginner's Guide
-date: 2023-10-01
-description: Discover the basics of SvelteKit and how to get started with this powerful framework.
+title: "Exploring SvelteKit: A Beginner's Guide"
+date: "2023-10-01"
+description: "Discover the basics of SvelteKit and how to get started with this powerful framework."
 ---
 
 # Exploring SvelteKit: A Beginner's Guide

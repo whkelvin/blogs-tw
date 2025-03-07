@@ -6,7 +6,6 @@ export interface Post {
   title: string;
   date: string;
   description: string;
-  tags: string[];
   content: SvelteComponent;
 }
 
@@ -28,7 +27,31 @@ export async function getAllPosts(): Promise<Post[]> {
         const post = await resolver() as { metadata: Omit<Post, 'slug' | 'content'>; default: SvelteComponent };
         
         if (dev) {
-          console.log(`Loading post ${slug}:`, post.metadata);
+          console.log(`Loading post ${slug}:`, {
+            hasMetadata: !!post?.metadata,
+            metadata: post?.metadata
+          });
+        }
+        
+        // Check if metadata exists
+        if (!post?.metadata) {
+          console.error(`Post ${slug} has no metadata`);
+          continue;
+        }
+        
+        // Validate required fields
+        const { title, date, description } = post.metadata;
+        
+        if (!title || !date || !description) {
+          console.error(`Post ${slug} is missing required fields:`, {
+            title,
+            date,
+            description,
+            hasTitle: !!title,
+            hasDate: !!date,
+            hasDescription: !!description
+          });
+          continue;
         }
         
         posts.push({
@@ -37,9 +60,7 @@ export async function getAllPosts(): Promise<Post[]> {
           content: post.default
         });
       } catch (error) {
-        if (dev) {
-          console.error(`Error loading post ${slug}:`, error);
-        }
+        console.error(`Error loading post ${slug}:`, error);
       }
     }
   }
@@ -48,6 +69,7 @@ export async function getAllPosts(): Promise<Post[]> {
   
   if (dev) {
     console.log('Total posts loaded:', sortedPosts.length);
+    console.log('Posts:', sortedPosts.map(p => ({ slug: p.slug, date: p.date })));
   }
   
   return sortedPosts;

@@ -1,7 +1,7 @@
 ---
-title: Getting Started with SvelteKit
-date: 2023-03-15
-description: Learn how to build modern web applications with SvelteKit
+title: "Getting Started with SvelteKit"
+date: "2023-03-15"
+description: "Learn how to build modern web applications with SvelteKit"
 ---
 
 # Getting Started with SvelteKit

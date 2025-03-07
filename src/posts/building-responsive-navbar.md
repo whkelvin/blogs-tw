@@ -1,7 +1,7 @@
 ---
-title: Building a Responsive Navbar with Tailwind CSS
-date: 2023-10-10
-description: Learn how to create a responsive navigation bar using Tailwind CSS.
+title: "Building a Responsive Navbar with Tailwind CSS"
+date: "2023-10-10"
+description: "Learn how to create a responsive navigation bar using Tailwind CSS."
 ---
 
 # Building a Responsive Navbar with Tailwind CSS

@@ -1,7 +1,7 @@
 ---
-title: Introduction to TypeScript: Why You Should Use It
-date: 2023-10-15
-description: Discover the benefits of using TypeScript in your JavaScript projects.
+title: "Introduction to TypeScript: Why You Should Use It"
+date: "2023-10-15"
+description: "Discover the benefits of using TypeScript in your JavaScript projects."
 ---
 
 # Introduction to TypeScript: Why You Should Use It
