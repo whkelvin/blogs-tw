@@ -2,7 +2,6 @@
 title: Hello World
 date: 2023-03-01
 description: Welcome to my new blog built with SvelteKit and Markdown
-tags: [svelte, markdown, web development]
 ---
 
 # Hello World!

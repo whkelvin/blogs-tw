@@ -37,7 +37,6 @@ Create new posts in the `src/posts` directory using Markdown format. Each post s
 title: Your Post Title
 date: YYYY-MM-DD
 description: A brief description of your post
-tags: [tag1, tag2, tag3]
 ---
 ```
 

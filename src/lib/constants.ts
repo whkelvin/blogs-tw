@@ -1,4 +1,3 @@
-export const SITE_TITLE = 'My Blog';
 export const SITE_DESCRIPTION = 'A minimalist blog built with SvelteKit';
 
 // Theme colors

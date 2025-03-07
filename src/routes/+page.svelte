@@ -3,7 +3,7 @@
   import { getAllPosts } from '$lib/posts';
   import type { Post } from '$lib/posts';
   import PostCard from '$lib/components/PostCard.svelte';
-  import { SITE_TITLE, SITE_DESCRIPTION } from '$lib/constants';
+  import { SITE_DESCRIPTION } from '$lib/constants';
   
   let allPosts: Post[] = [];
   let visiblePosts: Post[] = [];
@@ -65,12 +65,12 @@
 </script>
 
 <svelte:head>
-  <title>{SITE_TITLE}</title>
+  <title>Kelvin 的開發筆記</title>
   <meta name="description" content={SITE_DESCRIPTION} />
 </svelte:head>
 
 <section>
-  <h1 class="text-3xl font-bold mb-8">Blog Posts</h1>
+  <h1 class="text-xl font-bold mb-8 px-6">Kelvin 的開發筆記</h1>
   
   <div class="space-y-6">
     {#each visiblePosts as post (post.slug)}

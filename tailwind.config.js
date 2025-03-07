@@ -5,7 +5,10 @@ export default {
     extend: {
       colors: {
         background: '#F2F2F0',
-        foreground: '#5D6168'
+        primary: '#5D6168',
+        'primary-foreground': '#f2f2f0',
+        subtle: '#e5e7eb',
+        'subtle-foreground': '#505050',
       },
       typography: {
         DEFAULT: {
