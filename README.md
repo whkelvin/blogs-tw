@@ -1,38 +1,53 @@
-# sv
+# Personal Blog
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+A minimalist blog built with SvelteKit, MDsveX, and Tailwind CSS.
 
-## Creating a project
+## Features
 
-If you're seeing this, you've probably already done this step. Congrats!
+- Markdown-based blog posts
+- Responsive design
+- Infinite scroll post feed
+- Social sharing buttons
+- Umami analytics integration
+- Minimalist theme
 
+## Development
+
+1. Install dependencies:
 ```bash
-# create a new project in the current directory
-npx sv create
-
-# create a new project in my-app
-npx sv create my-app
+npm install
 ```
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
+2. Start the development server:
 ```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
-
-To create a production version of your app:
-
+3. Build for production:
 ```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
+## Writing Posts
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+Create new posts in the `src/posts` directory using Markdown format. Each post should include frontmatter with the following fields:
+
+```markdown
+---
+title: Your Post Title
+date: YYYY-MM-DD
+description: A brief description of your post
+tags: [tag1, tag2, tag3]
+---
+```
+
+## Deployment
+
+This blog is configured to deploy to Cloudflare Pages. Set up your Cloudflare Pages project and connect it to your repository for automatic deployments.
+
+## Analytics
+
+To enable analytics:
+1. Create an account at [Umami](https://umami.is/)
+2. Create a new website in your Umami dashboard
+3. Replace the `data-website-id` in `src/routes/+layout.svelte` with your website ID
