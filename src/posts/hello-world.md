@@ -23,12 +23,17 @@ This blog includes several features:
 
 Here's a simple code example:
 
-```javascript
+```js
+// Regular function
 function greet(name) {
-  return `Hello, ${name}!`;
+  return "Hello, " + name + "!";
 }
 
+// Using template literal
+const greetTemplate = (name) => `Hello, ${name}!`;
+
 console.log(greet('World'));
+console.log(greetTemplate('World'));
 ```
 
 ## What's Next?

@@ -11,8 +11,21 @@ const config = {
 		vitePreprocess(),
 		mdsvex({
 			extensions: ['.md'],
+			layout: {
+				_: 'src/lib/layouts/MarkdownPost.svelte'
+			},
 			smartypants: {
 				dashes: 'oldschool'
+			},
+			highlight: {
+				highlighter: (code, lang) => {
+					const escapedCode = code
+						.replace(/`/g, '\\`')
+						.replace(/\$/g, '\\$')
+						.replace(/{/g, '\\{')
+						.replace(/}/g, '\\}');
+					return `<pre><code class="language-${lang}">{@html \`${escapedCode}\`}</code></pre>`;
+				}
 			}
 		})
 	],
