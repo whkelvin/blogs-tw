@@ -21,7 +21,9 @@ const config = {
 					const html = await codeToHtml(code, {
 						lang,
 						theme: 'everforest-dark',
-						transformers: []
+						transformers: [
+							addCopyButton()
+						]
 					});
 					return `{@html ${JSON.stringify(html)}}`;
 				}
