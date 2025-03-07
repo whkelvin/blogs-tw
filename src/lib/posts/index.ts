@@ -1,12 +1,12 @@
 import { dev } from '$app/environment';
-import type { SvelteComponent } from 'svelte';
+import type { ComponentType } from 'svelte';
 
 export interface Post {
   slug: string;
   title: string;
   date: string;
   description: string;
-  content: SvelteComponent;
+  content: ComponentType;
 }
 
 // Get all posts
@@ -24,7 +24,7 @@ export async function getAllPosts(): Promise<Post[]> {
     
     if (slug) {
       try {
-        const post = await resolver() as { metadata: Omit<Post, 'slug' | 'content'>; default: SvelteComponent };
+        const post = await resolver() as { metadata: Omit<Post, 'slug' | 'content'>; default: ComponentType };
         
         if (dev) {
           console.log(`Loading post ${slug}:`, {
@@ -85,7 +85,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
       return null;
     }
     
-    const post = await modules[path]() as { metadata: Omit<Post, 'slug' | 'content'>; default: SvelteComponent };
+    const post = await modules[path]() as { metadata: Omit<Post, 'slug' | 'content'>; default: ComponentType };
     
     return {
       slug,

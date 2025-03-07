@@ -44,7 +44,7 @@
 </svelte:head>
 
 <section>
-  <h1 class="text-xl font-bold mb-8 px-6">Kelvin 的開發筆記</h1>
+  <h1 class="text-xl font-bold mb-8 px-6 font-wenkai">Kelvin 的開發筆記</h1>
   
   <div class="space-y-6">
     {#if loading}

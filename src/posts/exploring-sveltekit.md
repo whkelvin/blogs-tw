@@ -1,20 +1,20 @@
 ---
-title: "Exploring SvelteKit: A Beginner's Guide"
+title: "探索 SvelteKit：新手指南"
 date: "2023-10-01"
-description: "Discover the basics of SvelteKit and how to get started with this powerful framework."
+description: "探索 SvelteKit 的基礎知識，了解如何開始使用這個強大的框架"
 ---
 
-# Exploring SvelteKit: A Beginner's Guide
+# 探索 SvelteKit：新手指南
 
-SvelteKit is a modern framework for building web applications. In this guide, we'll explore the basics and get you started on your first SvelteKit project.
+SvelteKit 是一個現代的網頁應用程式框架。在本指南中，我們將探索其基礎知識，並幫助您開始您的第一個 SvelteKit 專案。
 
-## What is SvelteKit?
+## 什麼是 SvelteKit？
 
-SvelteKit is a framework that builds on top of Svelte, providing a complete solution for building web applications. It offers features like routing, server-side rendering, and more.
+SvelteKit 是建立在 Svelte 之上的框架，為建立網頁應用程式提供完整的解決方案。它提供路由、伺服器端渲染等功能。
 
-## Getting Started
+## 開始使用
 
-To create a new SvelteKit project, run:
+要創建新的 SvelteKit 專案，請執行：
 
 ```bash
 npm create svelte@latest my-app
@@ -23,6 +23,6 @@ npm install
 npm run dev
 ```
 
-## Conclusion
+## 結論
 
-SvelteKit is a powerful tool for modern web development. With its intuitive API and robust features, it's a great choice for developers of all levels. 
+SvelteKit 是現代網頁開發的強大工具。憑藉其直覺的 API 和強大的功能，它是各級開發者的絕佳選擇。 

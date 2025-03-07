@@ -30,6 +30,6 @@
   <article class="px-6 ">
     <time datetime={post.date} class="text-sm text-subtle">{formatDate(post.date)}</time>
     <h2 class="text-xl font-semibold group-hover:underline">{post.title}</h2>
-    <p class="text-foreground">{post.description}</p>
+    <p class="text-foreground text-sm">{post.description}</p>
   </article>
 </a> 

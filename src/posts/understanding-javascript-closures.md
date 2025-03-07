@@ -1,20 +1,20 @@
 ---
-title: "Understanding JavaScript Closures"
+title: "理解 JavaScript 閉包"
 date: "2023-10-05"
-description: "A deep dive into JavaScript closures and how they work."
+description: "深入探討 JavaScript 閉包及其運作原理"
 ---
 
-# Understanding JavaScript Closures
+# 理解 JavaScript 閉包
 
-Closures are a fundamental concept in JavaScript. They allow functions to access variables from an enclosing scope, even after that scope has finished executing.
+閉包是 JavaScript 中的一個基本概念。它允許函式存取外部作用域的變數，即使該作用域已經執行完畢。
 
-## How Closures Work
+## 閉包如何運作
 
-A closure is created when a function is defined inside another function, allowing the inner function to access the outer function's variables.
+當一個函式在另一個函式內部被定義時，就會創建閉包，使內部函式能夠存取外部函式的變數。
 
-```javascript
+```js
 function outerFunction() {
-  const outerVariable = 'I am outside!';
+  const outerVariable = 'hello world';
 
   function innerFunction() {
     console.log(outerVariable);
@@ -24,9 +24,9 @@ function outerFunction() {
 }
 
 const closure = outerFunction();
-closure(); // Output: I am outside!
+closure(); // hello world
 ```
 
-## Conclusion
+## 結論
 
-Closures are a powerful feature in JavaScript, enabling more flexible and modular code. Understanding them is key to mastering JavaScript. 
+閉包是 JavaScript 中的一個強大特性，能夠實現更靈活和模組化的程式碼。理解閉包是掌握 JavaScript 的關鍵。 

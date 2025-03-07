@@ -3,6 +3,10 @@ export default {
   content: ['./src/**/*.{html,js,svelte,ts,md}'],
   theme: {
     extend: {
+      fontFamily: {
+        wenkai: ['"LXGW WenKai TC"', 'sans-serif'],
+        noto: ['"Noto Sans TC"', 'sans-serif'],
+      },
       colors: {
         background: '#F2F2F0',
         primary: '#5D6168',

@@ -1,6 +1,8 @@
 import adapter from '@sveltejs/adapter-cloudflare';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
+import { codeToHtml } from 'shiki/bundle/full';
+import { addCopyButton } from 'shiki-transformer-copy-button';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,20 +13,17 @@ const config = {
 		vitePreprocess(),
 		mdsvex({
 			extensions: ['.md'],
-			layout: {
-				_: 'src/lib/layouts/MarkdownPost.svelte'
-			},
 			smartypants: {
 				dashes: 'oldschool'
 			},
 			highlight: {
-				highlighter: (code, lang) => {
-					const escapedCode = code
-						.replace(/`/g, '\\`')
-						.replace(/\$/g, '\\$')
-						.replace(/{/g, '\\{')
-						.replace(/}/g, '\\}');
-					return `<pre><code class="language-${lang}">{@html \`${escapedCode}\`}</code></pre>`;
+				highlighter: async (code, lang = 'text') => {
+					const html = await codeToHtml(code, {
+						lang,
+						theme: 'everforest-dark',
+						transformers: []
+					});
+					return `{@html ${JSON.stringify(html)}}`;
 				}
 			}
 		})

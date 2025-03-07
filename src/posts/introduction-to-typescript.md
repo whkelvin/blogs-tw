@@ -1,27 +1,27 @@
 ---
-title: "Introduction to TypeScript: Why You Should Use It"
+title: "TypeScript 入門：為什麼您應該使用它"
 date: "2023-10-15"
-description: "Discover the benefits of using TypeScript in your JavaScript projects."
+description: "探索在 JavaScript 專案中使用 TypeScript 的好處"
 ---
 
-# Introduction to TypeScript: Why You Should Use It
+# TypeScript 入門：為什麼您應該使用它
 
-TypeScript is a superset of JavaScript that adds static types. It helps catch errors early and improves code readability.
+TypeScript 是 JavaScript 的超集，增加了靜態型別。它有助於及早發現錯誤並提高程式碼可讀性。
 
-## Benefits of TypeScript
+## TypeScript 的優點
 
-1. **Static Typing**: Catch errors at compile time.
-2. **Improved Readability**: Clearer code with defined types.
-3. **Better Tooling**: Enhanced autocompletion and refactoring support.
+1. **靜態型別**：在編譯時捕獲錯誤。
+2. **提高可讀性**：透過定義型別使程式碼更清晰。
+3. **更好的工具支援**：增強的自動完成和重構支援。
 
-## Getting Started
+## 開始使用
 
-To add TypeScript to your project, run:
+要在您的專案中添加 TypeScript，請執行：
 
 ```bash
 npm install typescript --save-dev
 ```
 
-## Conclusion
+## 結論
 
-TypeScript is a valuable addition to any JavaScript project, offering improved reliability and maintainability. 
+TypeScript 是任何 JavaScript 專案的寶貴補充，提供更好的可靠性和可維護性。 

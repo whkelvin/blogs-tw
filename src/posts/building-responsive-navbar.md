@@ -1,30 +1,30 @@
 ---
-title: "Building a Responsive Navbar with Tailwind CSS"
+title: "使用 Tailwind CSS 建立響應式導航欄"
 date: "2023-10-10"
-description: "Learn how to create a responsive navigation bar using Tailwind CSS."
+description: "學習如何使用 Tailwind CSS 創建響應式導航欄"
 ---
 
-# Building a Responsive Navbar with Tailwind CSS
+# 使用 Tailwind CSS 建立響應式導航欄
 
-Tailwind CSS is a utility-first CSS framework that makes it easy to build responsive designs. In this tutorial, we'll create a responsive navbar.
+Tailwind CSS 是一個實用優先的 CSS 框架，使建立響應式設計變得容易。在本教程中，我們將創建一個響應式導航欄。
 
-## Creating the Navbar
+## 創建導航欄
 
-Here's a simple example of a responsive navbar using Tailwind CSS:
+以下是使用 Tailwind CSS 創建響應式導航欄的簡單示例：
 
 ```html
 <nav class="bg-gray-800 p-4">
   <div class="container mx-auto flex justify-between items-center">
     <a href="#" class="text-white text-lg font-bold">Logo</a>
     <div class="hidden md:flex space-x-4">
-      <a href="#" class="text-gray-300 hover:text-white">Home</a>
-      <a href="#" class="text-gray-300 hover:text-white">About</a>
-      <a href="#" class="text-gray-300 hover:text-white">Contact</a>
+      <a href="#" class="text-gray-300 hover:text-white">首頁</a>
+      <a href="#" class="text-gray-300 hover:text-white">關於</a>
+      <a href="#" class="text-gray-300 hover:text-white">聯絡</a>
     </div>
   </div>
 </nav>
 ```
 
-## Conclusion
+## 結論
 
-With Tailwind CSS, building responsive components is straightforward and efficient. Experiment with different styles to create your unique design. 
+使用 Tailwind CSS，建立響應式元件變得直接且高效。嘗試不同的樣式來創建您獨特的設計。 

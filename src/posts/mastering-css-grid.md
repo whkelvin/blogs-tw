@@ -1,16 +1,16 @@
 ---
-title: "Mastering CSS Grid: A Comprehensive Guide"
+title: "精通 CSS Grid：完整指南"
 date: "2023-10-20"
-description: "Learn how to use CSS Grid to create complex layouts with ease."
+description: "學習如何使用 CSS Grid 輕鬆創建複雜的版面配置"
 ---
 
-# Mastering CSS Grid: A Comprehensive Guide
+# 精通 CSS Grid：完整指南
 
-CSS Grid is a powerful layout system that allows you to create complex designs with ease. In this guide, we'll explore its features and how to use them.
+CSS Grid 是一個強大的版面系統，讓您能夠輕鬆創建複雜的設計。在本指南中，我們將探索其功能以及如何使用它們。
 
-## Basic Grid Layout
+## 基礎網格布局
 
-Here's a simple example of a grid layout:
+以下是一個簡單的網格布局示例：
 
 ```css
 .container {
@@ -26,6 +26,6 @@ Here's a simple example of a grid layout:
 }
 ```
 
-## Conclusion
+## 結論
 
-CSS Grid is a versatile tool for web design, enabling you to create responsive and flexible layouts. Experiment with different configurations to master its capabilities. 
+CSS Grid 是網頁設計中的一個多功能工具，使您能夠創建響應式和靈活的布局。嘗試不同的配置來掌握它的功能。 
