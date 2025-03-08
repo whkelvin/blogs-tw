@@ -1,10 +1,10 @@
 <script lang="ts">
 </script>
 
-<nav class="py-4 border-b border-gray-200">
-  <div class="container mx-auto max-w-3xl px-4 flex items-center">
-    <a href="/" class="flex items-center mx-auto">
-      <img src="/images/logo.svg" alt="Logo" class="h-12 w-12" />
-    </a>
-  </div>
-</nav> 
+<nav class="border-b border-gray-200 py-4">
+	<div class="container mx-auto flex max-w-3xl items-center px-4">
+		<a href="/" class="mx-auto flex items-center">
+			<img src="%sveltekit.assets%/images/logo.svg" alt="Logo" class="h-12 w-12" />
+		</a>
+	</div>
+</nav>
