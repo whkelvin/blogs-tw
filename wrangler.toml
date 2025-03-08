@@ -1,5 +1,5 @@
 name = "sveltekit-app"
-compatibility_date = "2023-06-28"
+compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 
 # Use the latest Node.js version available on Cloudflare
