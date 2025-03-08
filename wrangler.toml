@@ -1,0 +1,13 @@
+name = "sveltekit-app"
+compatibility_date = "2023-06-28"
+compatibility_flags = ["nodejs_compat"]
+
+# Use the latest Node.js version available on Cloudflare
+node_compat = true
+
+[build]
+command = "npm run build"
+
+# Routes
+[site]
+bucket = ".svelte-kit/cloudflare"
