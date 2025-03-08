@@ -4,17 +4,20 @@
 	import Footer from '$lib/components/Footer.svelte';
 </script>
 
-<div class="min-h-screen flex flex-col">
+<div class="flex min-h-screen flex-col">
 	<Navbar />
-	
-	<main class="flex-grow container mx-auto max-w-3xl px-4 py-8">
+
+	<main class="container mx-auto max-w-3xl flex-grow px-4 py-8">
 		<slot />
 	</main>
-	
+
 	<Footer />
 </div>
 
 <svelte:head>
-	<!-- Umami Analytics Script -->
-	<script async src="https://analytics.umami.is/script.js" data-website-id="your-umami-website-id"></script>
+	<script
+		defer
+		src="https://cloud.umami.is/script.js"
+		data-website-id="82057102-eeba-458e-b5b0-c95b93b657e2"
+	></script>
 </svelte:head>
