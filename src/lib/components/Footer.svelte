@@ -12,7 +12,7 @@
 				<p class="mb-4">
 					大家好! 我是 Kelvin! 目前隱居在加拿大的一座小島，一邊在一間 AI 新創打工，一邊做自己的新創 <a
 						class="underline"
-						href="yizy.dev">yizy.dev</a
+						href="https://yizy.dev">yizy.dev</a
 					>
 				</p>
 
