@@ -7,7 +7,7 @@ import { addCopyButton } from 'shiki-transformer-copy-button';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', '.md'],
-	
+
 	// Preprocess components with mdsvex and vite
 	preprocess: [
 		vitePreprocess(),
@@ -21,9 +21,7 @@ const config = {
 					const html = await codeToHtml(code, {
 						lang,
 						theme: 'everforest-dark',
-						transformers: [
-							addCopyButton()
-						]
+						transformers: [addCopyButton()]
 					});
 					return `{@html ${JSON.stringify(html)}}`;
 				}
@@ -32,8 +30,19 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter(),
-		
+		adapter: adapter({
+			// See below for an explanation of these options
+			routes: {
+				include: ['/*'],
+				exclude: ['<all>']
+			},
+			platformProxy: {
+				configPath: undefined,
+				environment: undefined,
+				persist: undefined
+			}
+		}),
+
 		// Customize page options
 		prerender: {
 			handleHttpError: ({ path, referrer, message }) => {
