@@ -1,4 +1,5 @@
-export const SITE_DESCRIPTION = 'A minimalist blog built with SvelteKit';
+export const SITE_DESCRIPTION =
+	'分享有關 AI, Svelte, Neovim, Typescript, Linux, Terminal 還有其他雜七雜八的酷東西';
 
 // Theme colors
 export const COLORS = {
