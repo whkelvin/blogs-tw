@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "7b5e474609e25d2b",
+        "id": "dc67a8446a6d0b32",
         "type": "tabs",
         "children": [
           {
-            "id": "92233ef46693a9a1",
+            "id": "ad7c54a379e82cb6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "documentation-first-approach.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "documentation-first-approach"
             }
           }
         ]
@@ -36,7 +40,8 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -154,8 +159,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "92233ef46693a9a1",
+  "active": "ad7c54a379e82cb6",
   "lastOpenFiles": [
+    "nest.png",
+    "documentation-first-approach.md",
     "what-is-rag.md",
     "understanding-javascript-closures.md",
     "mastering-css-grid.md",
