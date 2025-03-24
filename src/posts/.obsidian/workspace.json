@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "documentation-first-approach.md",
+                "file": "rbac-with-casbin.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "documentation-first-approach"
+              "title": "rbac-with-casbin"
             }
           }
         ]
@@ -161,9 +161,20 @@
   },
   "active": "ad7c54a379e82cb6",
   "lastOpenFiles": [
-    "nest.png",
-    "documentation-first-approach.md",
+    "rbac-with-casbin.md~",
     "what-is-rag.md",
+    "rbac-with-casbin.md",
+    "測試用文章.md",
+    "what-is-rag.md~",
+    "kelvins-dev-note/rbac-with-casbin.md",
+    "kelvins-dev-note/documentation-first-approach.md",
+    "documentation-first-approach.md",
+    "fantastic-dreams-and-where-to-find-them/測試用文章.md",
+    "fantastic-dreams-and-where-to-find-them",
+    "kelvins-dev-note/what-is-rag.md",
+    "kelvins-dev-note",
+    "kelvin-dev-note",
+    "nest.png",
     "understanding-javascript-closures.md",
     "mastering-css-grid.md",
     "introduction-to-typescript.md",
