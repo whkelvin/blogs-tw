@@ -7,11 +7,12 @@ export interface Post {
 	date: string;
 	description: string;
 	content: SvelteComponent;
+	tag: string;
 }
 
 // Get all posts
 export async function getAllPosts(): Promise<Post[]> {
-	const modules = import.meta.glob('/src/posts/*.md');
+	const modules = import.meta.glob('/src/posts/**/*.md');
 
 	if (dev) {
 		console.log('Found post files:', Object.keys(modules));
@@ -84,8 +85,12 @@ export async function getAllPosts(): Promise<Post[]> {
 // Get a single post by slug
 export async function getPostBySlug(slug: string): Promise<Post | null> {
 	try {
-		const modules = import.meta.glob('/src/posts/*.md');
-		const path = `/src/posts/${slug}.md`;
+		const modules = import.meta.glob('/src/posts/**/*.md');
+		const paths = Object.keys(modules).filter((path) => path.endsWith(`${slug}.md`));
+		const path = paths.length > 0 ? paths[0] : null;
+		if (path === null) {
+			throw null;
+		}
 
 		if (!modules[path]) {
 			return null;

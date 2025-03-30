@@ -2,7 +2,6 @@
 title: 'Token？ Context Window？ RAG？ 一次看懂 AI 專有名詞'
 date: '2025-03-08'
 description: '別人在聊 AI 你只能微笑點頭裝懂嗎？看完這篇你就能和我一起裝懂了？'
-tag: 'Kelvin 的開發筆記'
 ---
 
 前幾個月開始在一間 AI 新創公司打工，接觸到了一堆有的沒的專有名詞，像是 `Token`、 `Context Window`、 `RAG`、 `Embedding`、 `Vector Database` 這些對一個剛接觸 LLM 的小白很陌生的生詞。 最近似乎打通了任督二脈，有比較理解這些概念的傾向。決定寫一篇文來和大家分享一下我的理解。

@@ -7,7 +7,6 @@
 
 	let allPosts: Post[] = $state([]);
 	let visiblePosts: Post[] = $state([]);
-	let page = $state(1);
 	const postsPerPage = 5;
 	let loading = $state(true);
 	let hasMore = $state(true);
