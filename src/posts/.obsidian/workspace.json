@@ -11,14 +11,10 @@
             "id": "ad7c54a379e82cb6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "rbac-with-casbin.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "rbac-with-casbin"
+              "title": "New tab"
             }
           }
         ]
@@ -161,6 +157,15 @@
   },
   "active": "ad7c54a379e82cb6",
   "lastOpenFiles": [
+    "100-startups/jing.md",
+    "100-startups",
+    "fantastic-dreams-and-where-to-find-them/what-should-I-do.md",
+    "fantastic-dreams-and-where-to-find-them/what-should-i-do.md",
+    "fantastic-dreams-and-where-to-find-them/who-am-I.md",
+    "fantastic-dreams-and-where-to-find-them/who-am-i.md",
+    "Untitled.md",
+    "fantastic-dreams-and-where-to-find-them/starting-point.md",
+    "fantastic-dreams-and-where-to-find-them/root.md",
     "rbac-with-casbin.md~",
     "what-is-rag.md",
     "rbac-with-casbin.md",

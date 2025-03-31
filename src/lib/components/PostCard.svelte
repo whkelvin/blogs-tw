@@ -30,9 +30,8 @@
 
 <a href="/{post.slug}" class="group block">
 	<article class="px-6">
-		<time datetime={post.date} class="text-subtle text-sm">{formatDate(post.date)}</time>
-		<h2 class="text-xl font-semibold group-hover:underline">{post.title}</h2>
+		<time datetime={post.date} class="text-subtle-foreground text-sm">{formatDate(post.date)}</time>
+		<h2 class="text-foreground text-xl font-semibold group-hover:underline">{post.title}</h2>
 		<p class="text-foreground text-sm">{post.description}</p>
 	</article>
 </a>
-

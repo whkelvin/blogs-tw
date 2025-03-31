@@ -161,7 +161,7 @@ Policy Definition - 定義角色與權限的關係
 
 Role Definition
 
-用來讓角色A 可以繼承角色B 的權限
+用來讓角色 A 可以繼承角色 B 的權限
 
 Policy Effect
 

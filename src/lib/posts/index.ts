@@ -10,9 +10,27 @@ export interface Post {
 	tag: string;
 }
 
-// Get all posts
-export async function getAllPosts(): Promise<Post[]> {
-	const modules = import.meta.glob('/src/posts/**/*.md');
+export type Series =
+	| 'kelvins-dev-note'
+	| 'fantastic-dreams-and-where-to-find-them'
+	| '100-startups';
+export type SortOpt = 'asc' | 'desc';
+export async function getAllPosts(filter?: Series, sort: SortOpt = 'desc'): Promise<Post[]> {
+	let modules = import.meta.glob('/src/posts/**/*.md');
+
+	if (filter) {
+		if (filter == 'kelvins-dev-note') {
+			modules = import.meta.glob('/src/posts/kelvins-dev-note/*.md');
+		}
+
+		if (filter == 'fantastic-dreams-and-where-to-find-them') {
+			modules = import.meta.glob('/src/posts/fantastic-dreams-and-where-to-find-them/*.md');
+		}
+
+		if (filter == '100-startups') {
+			modules = import.meta.glob('/src/posts/100-startups/*.md');
+		}
+	}
 
 	if (dev) {
 		console.log('Found post files:', Object.keys(modules));
@@ -69,7 +87,10 @@ export async function getAllPosts(): Promise<Post[]> {
 		}
 	}
 
-	const sortedPosts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+	const sortedPosts =
+		sort === 'desc'
+			? posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+			: posts.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime());
 
 	if (dev) {
 		console.log('Total posts loaded:', sortedPosts.length);

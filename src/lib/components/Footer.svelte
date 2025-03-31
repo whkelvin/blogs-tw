@@ -8,7 +8,14 @@
 			<img src={PROFILE.image} alt={PROFILE.name} class="h-24 w-24 rounded-full object-cover" />
 
 			<div class="text-center md:text-left">
-				<h3 class="mb-2 text-xl font-semibold">{PROFILE.name}</h3>
+				<div class="mb-2 flex flex-row">
+					<h3 class="my-auto mb-2 text-xl font-semibold">{PROFILE.name}</h3>
+					<a
+						href="https://buy.stripe.com/fZe2bNbPG2KVgGQ7sv"
+						class="bg-primary text-primary-foreground mx-2 my-auto rounded-full px-4 py-2 hover:font-bold"
+						>請我喝咖啡！</a
+					>
+				</div>
 				<p class="mb-4">
 					大家好! 我是 Kelvin! 目前隱居在加拿大的一座小島，一邊在一間 AI 新創打工，一邊做自己的新創 <a
 						class="underline"

@@ -1,33 +1,25 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-	content: ['./src/**/*.{html,js,svelte,ts,md}'],
+module.exports = {
 	theme: {
 		extend: {
-			fontFamily: {
-				wenkai: ['"LXGW WenKai TC"', 'sans-serif'],
-				noto: ['"Noto Sans TC"', 'sans-serif']
-			},
-			colors: {
-				background: '#F2F2F0',
-				foreground: '#5d6168',
-				primary: '#5d6168',
-				'primary-foreground': '#f2f2f0',
-				subtle: '#e5e7eb',
-				'subtle-foreground': '#505050'
-			},
 			typography: {
 				DEFAULT: {
 					css: {
+						'blockquote p:first-of-type::before': {
+							content: 'none'
+						},
+						'blockquote p:last-of-type::after': {
+							content: 'none'
+						},
 						'code::before': {
-							content: '""'
+							content: ''
 						},
 						'code::after': {
-							content: '""'
+							content: ''
 						}
 					}
 				}
 			}
 		}
-	},
-	plugins: [require('@tailwindcss/typography')]
+	}
 };

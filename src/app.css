@@ -4,54 +4,79 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@config "../tailwind.config.js";
 
-:root {
-  --background-color: #F2F2F0;
-  --foreground-color: #5D6168;
+@theme {
+	--color-background: oklch(96.86% 0.003 92.94);
+	--color-foreground: oklch(45.02% 0.017 262.33);
+	--color-primary: oklch(45.02% 0.017 262.33);
+	--color-primary-foreground: oklch(96.86% 0.003 92.94);
+	--color-subtle: oklch(93.87% 0.002 255.32);
+	--color-subtle-foreground: oklch(36.18% 0.005 262.83);
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--foreground-color);
-  font-family: 'LXGW WenKai TC','Noto Sans TC',  sans-serif;
+	font-family: 'LXGW WenKai TC', 'Noto Sans TC', sans-serif;
 }
+
+code {
+	background-color: var(--color-primary);
+	color: var(--color-primary-foreground);
+	padding: 1px 7px;
+	margin: 4px;
+	border-radius: 4px;
+}
+
+img {
+	border-radius: 4px;
+}
+
 pre:has(code) {
-  position: relative;
+	position: relative;
+	display: block;
+}
+
+pre code {
+	display: block;
+	background-color: transparent;
+	padding: 25px 10px;
+	border-radius: 2px;
 }
 
 pre button.copy {
-  position: absolute;
-  right: 16px;
-  top: 16px;
-  height: 20px;
-  width: 20px;
-  padding: 0;
-  display: flex;
+	position: absolute;
+	right: 16px;
+	top: 16px;
+	height: 20px;
+	width: 20px;
+	padding: 0;
+	display: flex;
+	cursor: pointer;
 
-  & span {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
+	& span {
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
 
-  & .ready {
-    background-image: url(/icons/copy.svg);
-  }
+	& .ready {
+		background-image: url(/icons/copy.svg);
+	}
 
-  & .success {
-    display: none;
-    background-image: url(/icons/copy-success.svg); 
-  }
+	& .success {
+		display: none;
+		background-image: url(/icons/copy-success.svg);
+	}
 
-  &.copied {
-    & .success {
-      display: block;
-    }
+	&.copied {
+		& .success {
+			display: block;
+		}
 
-    & .ready {
-      display: none;
-    }
-  }
+		& .ready {
+			display: none;
+		}
+	}
 }
