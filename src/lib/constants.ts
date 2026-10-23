@@ -1,5 +1,5 @@
 export const SITE_DESCRIPTION =
-	'分享有關 AI, Svelte, Neovim, Typescript, Linux, Terminal 還有其他雜七雜八的酷東西';
+	'Kelvin\'s Portfolio';
 
 // Theme colors
 export const COLORS = {
@@ -16,7 +16,7 @@ export const SOCIAL_LINKS = {
 
 // Profile information
 export const PROFILE = {
-	name: 'Kelvin Hsu.',
+	name: 'Kelvin Hsu',
 	bio: ``,
 	image: 'https://blog.yizy.dev/profile-pic.png'
 };

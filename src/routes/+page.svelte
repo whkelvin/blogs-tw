@@ -11,14 +11,14 @@
 	let loading = $state(true);
 	let hasMore = $state(true);
 	const seriesList: { id: Series; label: string; sort: SortOpt }[] = [
-		{ id: 'about-me', label: 'About Me', sort: 'asc' },
-		{ id: 'projects', label: 'Projects', sort: 'desc' }
+		{ id: 'projects', label: 'Projects', sort: 'desc' },
+		{ id: 'about-me', label: 'About Me', sort: 'asc' }
 		/*{ id: 'archive', label: 'Archive', sort: 'desc' }*/
 	];
-	let selectedSeries: Series = $state('about-me');
+	let selectedSeries: Series = $state(seriesList[0].id);
 
 	onMount(async () => {
-		allPosts = await getAllPosts(selectedSeries, 'asc');
+		allPosts = await getAllPosts(selectedSeries, seriesList[0].sort);
 		loading = false;
 		const initialPosts = allPosts.slice(0, postsPerPage);
 		visiblePosts = initialPosts;
