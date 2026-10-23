@@ -16,8 +16,8 @@ export const SOCIAL_LINKS = {
 
 // Profile information
 export const PROFILE = {
-	name: 'Kelvin H.',
-	bio: `大家好! 我是 Kelvin! 目前隱居在加拿大的一座小島，一邊在一間 AI 新創打工，一邊做自己的新創 <a href='yizy.dev'>yizy.dev</a>`,
+	name: 'Kelvin Hsu.',
+	bio: ``,
 	image: 'https://blog.yizy.dev/profile-pic.png'
 };
 

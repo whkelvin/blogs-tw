@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { getAllPosts } from '$lib/posts';
-	import type { Post } from '$lib/posts';
+	import type { Post, Series, SortOpt } from '$lib/posts';
 	import PostCard from '$lib/components/PostCard.svelte';
 	import { SITE_DESCRIPTION } from '$lib/constants';
 
@@ -10,16 +10,15 @@
 	const postsPerPage = 5;
 	let loading = $state(true);
 	let hasMore = $state(true);
-	type Series =
-		| undefined
-		| 'kelvins-dev-note'
-		| 'fantastic-dreams-and-where-to-find-them'
-		| '100-startups';
-	type SortOpt = 'asc' | 'desc';
-	let selectedSeries: Series = $state(undefined);
+	const seriesList: { id: Series; label: string; sort: SortOpt }[] = [
+		{ id: 'about-me', label: 'About Me', sort: 'asc' },
+		{ id: 'projects', label: 'Projects', sort: 'desc' }
+		/*{ id: 'archive', label: 'Archive', sort: 'desc' }*/
+	];
+	let selectedSeries: Series = $state('about-me');
 
 	onMount(async () => {
-		allPosts = await getAllPosts(selectedSeries);
+		allPosts = await getAllPosts(selectedSeries, 'asc');
 		loading = false;
 		const initialPosts = allPosts.slice(0, postsPerPage);
 		visiblePosts = initialPosts;
@@ -54,45 +53,21 @@
 </script>
 
 <svelte:head>
-	<title>Kelvin 的部落格</title>
+	<title>Kelvin Hsu's Portfolio</title>
 	<meta name="description" content={SITE_DESCRIPTION} />
 </svelte:head>
 
 <section>
-	<h1 class="font-wenkai text-primary mb-2 px-6 text-xl font-bold">Kelvin 的部落格</h1>
+	<h1 class="font-wenkai text-primary mb-2 px-6 text-xl font-bold">Kelvin Hsu's Portfolio</h1>
 	<div class="mb-8 space-x-2 px-6">
-		<button
-			class="underline hover:cursor-pointer {selectedSeries === undefined ? 'font-bold' : ''}"
-			onclick={async () => {
-				await onSelectSeries(undefined);
-			}}>全部文章</button
-		>
-		<button
-			class="underline hover:cursor-pointer {selectedSeries === 'kelvins-dev-note'
-				? 'font-bold'
-				: ''}"
-			onclick={async () => {
-				await onSelectSeries('kelvins-dev-note');
-			}}>Kelvin 的開發筆記</button
-		>
-		<button
-			class="underline hover:cursor-pointer {selectedSeries ===
-			'fantastic-dreams-and-where-to-find-them'
-				? 'font-bold'
-				: ''}"
-			onclick={async () => {
-				await onSelectSeries('fantastic-dreams-and-where-to-find-them', 'asc');
-			}}>夢想與他們的產地</button
-		>
-
-		<!--
-		<button
-			class="underline hover:cursor-pointer {selectedSeries === '100-startups' ? 'font-bold' : ''}"
-			onclick={async () => {
-				await onSelectSeries('100-startups', 'asc');
-			}}>創業的 100 種嘗試</button
-		>
-        -->
+		{#each seriesList as series (series.id)}
+			<button
+				class="underline hover:cursor-pointer {selectedSeries === series.id ? 'font-bold' : ''}"
+				onclick={async () => {
+					await onSelectSeries(series.id, series.sort);
+				}}>{series.label}</button
+			>
+		{/each}
 	</div>
 
 	<div class="space-y-6">

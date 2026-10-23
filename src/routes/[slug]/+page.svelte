@@ -1,5 +1,4 @@
 <script lang="ts">
-	import ShareButtons from '$lib/components/ShareButtons.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -30,6 +29,4 @@
 		<h1>{post.title}</h1>
 		<svelte:component this={post.content} />
 	</div>
-
-	<ShareButtons title={post.title} />
 </article>

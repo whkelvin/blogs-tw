@@ -10,26 +10,15 @@ export interface Post {
 	tag: string;
 }
 
-export type Series =
-	| 'kelvins-dev-note'
-	| 'fantastic-dreams-and-where-to-find-them'
-	| '100-startups';
+export type Series = 'about-me' | 'projects' | 'archive';
 export type SortOpt = 'asc' | 'desc';
 export async function getAllPosts(filter?: Series, sort: SortOpt = 'desc'): Promise<Post[]> {
 	let modules = import.meta.glob('/src/posts/**/*.md');
 
 	if (filter) {
-		if (filter == 'kelvins-dev-note') {
-			modules = import.meta.glob('/src/posts/kelvins-dev-note/*.md');
-		}
-
-		if (filter == 'fantastic-dreams-and-where-to-find-them') {
-			modules = import.meta.glob('/src/posts/fantastic-dreams-and-where-to-find-them/*.md');
-		}
-
-		if (filter == '100-startups') {
-			modules = import.meta.glob('/src/posts/100-startups/*.md');
-		}
+		modules = Object.fromEntries(
+			Object.entries(modules).filter(([path]) => path.startsWith(`/src/posts/${filter}/`))
+		);
 	}
 
 	if (dev) {
